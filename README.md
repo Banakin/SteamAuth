@@ -1,9 +1,27 @@
-### To install
-First download and place the contents of this repository into a folder called `SteamAuth` inside of your `/extensions` folder (This plugin requires [PlugableAuth](https://www.mediawiki.org/wiki/Extension:PluggableAuth))
+# SteamAuth
 
-Then add the following line to the bottom of your `LocalSettings.php`
-`wfLoadExtension('SteamAuth');`
+**SteamAuth** is a MediaWiki extension that uses [PlugableAuth](https://www.mediawiki.org/wiki/Extension:PluggableAuth). As of version 1.0, the extension is designed to be used as the only form of authentication for your wiki.
 
-### Config
-$wgSteamAuth_Key (default: "key") - Required* The key of your steam api (available at [this link](https://steamcommunity.com/dev/apikey))
-$wgSteamAuth_AppID (default: null) - Optional* The ID of the game users are required to have in order to log in. (If not set users wont need a specific game)
+
+## Installation
+⚠ **NOTE** This extension requires [PlugableAuth](https://www.mediawiki.org/wiki/Extension:PluggableAuth) to be installed first.
+
+- Download and place the file(s) in a directory called `SteamAuth` in your `extensions/` folder.
+- Add the following code at the bottom of your [LocalSettings.php](https://www.mediawiki.org/wiki/Manual:LocalSettings.php):
+  ```php
+  wfLoadExtension( 'SteamAuth' );
+  ```
+- [Configure as required](#configuration)
+- ✔ Done – Navigate to [Special:Version](https://www.mediawiki.org/wiki/Special:Version) on your wiki to verify that the extension is successfully installed.
+
+
+## Configuration
+⚠ **NOTE** Disabling normal account creation is strongly recommended. You can do so by adding the following line to the bottom of your [LocalSettings.php](https://www.mediawiki.org/wiki/Manual:LocalSettings.php):
+```php
+$wgGroupPermissions['*']['createaccount'] = false;
+```
+
+| Flag | Default | Description |
+|:-:|:-:|:-:|
+| $wgSteamAuth_Key | "key" | Your steam developer API key (Available [here](https://steamcommunity.com/dev/apikey)) |
+| $wgSteamAuth_AppID | null | **(Optional)** If set, only users that have this app/game in their Steam library can login and create accounts. |
