@@ -1,9 +1,9 @@
 # SteamAuth
 [![PHP Lint](https://github.com/Banakin/SteamAuth/workflows/PHP%20Lint/badge.svg)](https://github.com/Banakin/SteamAuth/actions)
 
-**SteamAuth** is a MediaWiki extension that allows users to sign in with Steam. The plugin uses [PluggableAuth](https://www.mediawiki.org/wiki/Extension:PluggableAuth). 
+**SteamAuth** is a MediaWiki extension that allows users to sign in with Steam. This extension uses [PluggableAuth](https://www.mediawiki.org/wiki/Extension:PluggableAuth). 
 
-As of version 1.0, the extension is designed to be used as the only form of authentication for your wiki.
+This extension is designed to be used as the only form of authentication for your wiki.
 
 
 ## Installation
