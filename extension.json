@@ -1,0 +1,48 @@
+{
+	"name": "SteamAuth",
+	"version": "1.0",
+	"author": [
+		"[https://www.mediawiki.org/wiki/User:Banakin900 Banakin]"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:SteamAuth",
+	"descriptionmsg": "steamauth-desc",
+	"type": "other",
+	"requires": {
+        "MediaWiki": ">= 1.34.0",
+		"extensions": {
+			"PluggableAuth": ">= 5.1"
+		}
+	},
+	"MessagesDirs": {
+		"SteamAuth": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"SteamAuth": "src/SteamAuth.php",
+		"LightOpenID": "includes/openid.php"
+	},
+	"config": {
+		"SteamAuth_Key": {
+			"value": "key",
+			"description": "steamauth-key-dec"
+		},
+		"SteamAuth_AppID": {
+			"value": null,
+			"description": "steamauth-appid-dec"
+		},
+		"PluggableAuth_Class": {
+			"value": "SteamAuth",
+			"description": "steamauth-pluggable-auth-class-desc"
+		},
+		"PluggableAuth_ButtonLabelMessage": {
+			"value": "steamauth-pluggable-auth-button-label-message",
+			"description": "steamauth-pluggable-auth-button-label-message-desc"
+		}
+	},
+	"ConfigRegistry": {
+		"SteamAuth": "GlobalVarConfig::newInstance"
+	},
+	"load_composer_autoloader": true,
+	"manifest_version": 2
+}

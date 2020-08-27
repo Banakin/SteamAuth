@@ -1,0 +1,14 @@
+{
+    "@metadata": {
+      "authors": [
+        "Banakin"
+      ]
+    },
+    "steamauth-extensionname": "SteamAuth",
+    "steamauth-desc": "Extends the PluggableAuth extension to provide authentication using Steam.",
+    "steamauth-key-dec": "Your steam developer API key",
+    "steamauth-appid-dec": "If set, only users that have this app in their Steam library can login and create accounts.",
+    "steamauth-pluggable-auth-class-desc": "Sets the class that should be used for Pluggable Auth",
+    "steamauth-pluggable-auth-button-label-message": "Sign in with Steam",
+    "steamauth-pluggable-auth-button-label-message-desc": "Sets the button text for Pluggable Auth"
+  }
