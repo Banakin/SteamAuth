@@ -70,9 +70,9 @@ class SteamAuth extends PluggableAuth {
                         if ($hasgame) {
                             // Log user in if they have the game
                             $id = $player->steamid;
-                            $username = $player->personaname;
-                            $realname = NULL;
-                            $email = NULL;
+                            $username = $player->steamid;
+                            $realname = $player->personaname;
+                            
                             return true;
                         } else {
                             // Don't log the user in if they dont have the game
@@ -82,9 +82,8 @@ class SteamAuth extends PluggableAuth {
                     } else {
                         // If the appid has not been specified then log the user in
                         $id = $player->steamid;
-                        $username = $player->personaname;
-                        $realname = NULL;
-                        $email = NULL;
+                        $username = $player->steamid;
+                        $realname = $player->personaname;
                         
                         return true;
                     }                    
