@@ -1,12 +1,14 @@
 # SteamAuth
 
-**SteamAuth** is a MediaWiki extension that uses [PlugableAuth](https://www.mediawiki.org/wiki/Extension:PluggableAuth). As of version 1.0, the extension is designed to be used as the only form of authentication for your wiki.
+**SteamAuth** is a MediaWiki extension that allows users to sign in with Steam. The plugin uses [PlugableAuth](https://www.mediawiki.org/wiki/Extension:PluggableAuth). 
+
+As of version 1.0, the extension is designed to be used as the only form of authentication for your wiki.
 
 
 ## Installation
 ⚠ **NOTE** This extension requires [PlugableAuth](https://www.mediawiki.org/wiki/Extension:PluggableAuth) to be installed first.
 
-- Download and place the file(s) in a directory called `SteamAuth` in your `extensions/` folder.
+- [Download](https://github.com/Banakin/SteamAuth/releases/) and place the file(s) in a directory called `SteamAuth` in your `extensions/` folder.
 - Add the following code at the bottom of your [LocalSettings.php](https://www.mediawiki.org/wiki/Manual:LocalSettings.php):
   ```php
   wfLoadExtension( 'SteamAuth' );
