@@ -1,6 +1,7 @@
 <?php
 // Imports
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionManager;
 
@@ -17,15 +18,19 @@ class SteamAuth extends PluggableAuth {
         try {
             // Create LightOpenID that directs back to this session
             $openid = new LightOpenID($authManager->getAuthenticationSessionData(PluggableAuthLogin::RETURNTOURL_SESSION_KEY));
-
+            
             // If the LightOpenID hasn't started send the user to Steam (eventually display the login page)
             if(!$openid->mode) {
-                if(true) {
+                // Check if the button was clicked
+                $isLoggingIn = $authManager->getAuthenticationSessionData(PluggableAuthLogin::EXTRALOGINFIELDS_SESSION_KEY);
+
+                if(isset($isLoggingIn['steam'])) {
                     $openid->identity = 'https://steamcommunity.com/openid/?l=english'; // Force english so a random lang is not selected
                     header('Location: ' . $openid->authUrl());
                     exit;
                 } else {
-                    $errorMessage = null;
+                    // Show the login page
+                    $errorMessage = '';
                     return false;
                 }
             } else if ($openid->mode == 'cancel') {

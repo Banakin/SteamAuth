@@ -19,9 +19,13 @@
 		]
 	},
 	"AutoloadClasses": {
+		"Setup": "src/Setup.php",
 		"SteamAuth": "src/SteamAuth.php",
 		"LightOpenID": "includes/openid.php"
 	},
+	"ExtensionFunctions": [
+		"Setup::init"
+	],
 	"config": {
 		"SteamAuth_Key": {
 			"value": "key",
